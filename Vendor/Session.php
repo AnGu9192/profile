@@ -2,7 +2,6 @@
 
 class Session
 {
-
     public static $instance;
     static public function getInstance(){
         if (!self::$instance) {

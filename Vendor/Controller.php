@@ -26,6 +26,7 @@ class Controller{
                     throw new Exception("$viewFileName view file doesn't exist in " . VIEWS . "directory");
                 }
 
+
             }else{
                 throw new Exception("$this->layout.php layout file doesn't exist in " . LAYOUTS . "directory");
             }
