@@ -68,6 +68,10 @@ class App {
         echo "/$filePath";
     }
 
+    public static function route($route){
+        self::asset($route);
+    }
+
     public static function loadModels(){
         foreach (glob(MODELS . "*.php") as $model){
             include_once $model;

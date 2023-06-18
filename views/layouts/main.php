@@ -14,10 +14,10 @@
     <title>Profil - Personal Portfolio Html5 Template</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php dirname(__DIR__) ?>/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php App::asset('images/favicon.png') ?>">
 
     <!-- Bootstrap css -->
-<!--   <link href="--><?php //App::asset("css/bootstrap.min.css"); ?><!--" rel="stylesheet">-->
+   <link href="<?php App::asset("css/bootstrap.min.css"); ?>" rel="stylesheet">
 
 
 
@@ -61,6 +61,50 @@
 <body>
 <!-- Preloader starts-->
 <div id="preloader"></div>
+<?php if(App::$currentAction != 'login'){ ?>
+<!-- Navigation area starts -->
+<div class="menu-area navbar-fixed-top">
+    <div class="container">
+        <div class="row">
+
+            <!-- Navigation starts -->
+            <div class="col-md-12">
+                <div class="mainmenu">
+                    <div class="navbar navbar-nobg">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="<?php App::route('index/index'); ?>"><span>profil</span></a>
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+
+                        <div class="navbar-collapse collapse">
+                            <nav>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="active"><a class="smooth_scroll" href="#slider">Home</a></li>
+                                    <li><a class="smooth_scroll" href="#about">About</a></li>
+                                    <li><a class="smooth_scroll" href="#service">Services</a></li>
+                                    <li><a class="smooth_scroll" href="#work">Work</a></li>
+                                    <li><a class="smooth_scroll" href="#testimonial">Testimonial</a></li>
+                                    <li><a class="smooth_scroll" href="#contact">Contact</a></li>
+                                    <li><a href="<?php App::route('user/login'); ?>">Login</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation ends -->
+
+        </div>
+    </div>
+</div>
+<!-- Navigation area ends -->
+<?php } ?>
+
 
 <?php echo $content ?>
 

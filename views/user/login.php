@@ -1,5 +1,4 @@
-<?php
-?>
+
 <section class="contact-area section-big">
         <div class="container">
 
@@ -7,7 +6,7 @@
                 <div class="col-md-12 text-center">
                     <div class="section-title">
                         <h2>Login</h2>
-                        <h5>Don't have an account?<a href="<?php BASE_PATH ?>/register/register" class="color:black">Register</a></h5>
+                        <h5>Don't have an account?<a href="<?php App::route('user/register'); ?>" class="color:black">Register</a></h5>
 
                     </div>
                 </div>
