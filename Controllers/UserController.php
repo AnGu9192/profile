@@ -7,6 +7,7 @@ class UserController extends Controller
     {
         $password = $this->request()->post('password');
         $password = password_hash($password,PASSWORD_DEFAULT);
+
         $email = $this->request()->post('email');
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
@@ -16,17 +17,15 @@ class UserController extends Controller
                 'firstname' => $this->request()->post('firstname'),
                 'lastname' => $this->request()->post('lastname'),
                 'email' => $email,
-                'birthday' => $this->request()->post('birthday'),
-                'gender' => $this->request()->post('gender'),
                 'password' => $password,
+                //'birthday' => $this->request()->post('birthday'),
+                'gender' => $this->request()->post('gender'),
+
             ];
-            var_dump($data);
 
             $user = new User();
             $user->insert($data);
             $this->redirect('user/login');
-
-            var_dump($user);
 
         }
         $this->render('register');
@@ -40,10 +39,10 @@ class UserController extends Controller
         $user = $userModel->select()->where([
             'email' => $email,
         ])->first();
-//        if($user){
-//            $this->session()->set('user_id',$user->id);
-//            $this->redirect('user/profile');
-//        }
+        if(!$user){
+            $this->session()->set('user_id',$user->id);
+            $this->redirect('user/profile');
+        }
         $this->render('login');
     }
 
@@ -54,11 +53,16 @@ class UserController extends Controller
         $userModel = new User();
         $user = $userModel->select()->where([
             'id' => $this->session()->get('id'),
+
         ])->first();
+        var_dump($user);
+        //$user = $userModel->select()->all();
         $this->render('profile',[
             'user' => $user
         ]);
 
     }
+
+
 
 }

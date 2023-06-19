@@ -20,7 +20,7 @@
                     <span class="icon-quote"></span>
                     <p>The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.</p>
                     <div class="clearfix"></div>
-                    <img src="assets/img/testi/1.jpg" alt="">
+                    <img src="<?php App::asset('images/testi/1.jpg'); ?>" alt="">
                     <h4>- Mr. Jonathon Doe</h4>
                     <p class="desg">Founder of web_bean</p>
                 </div>
@@ -30,7 +30,9 @@
                     <span class="icon-quote"></span>
                     <p>The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.</p>
                     <div class="clearfix"></div>
-                    <img src="assets/img/testi/1.jpg" alt="">
+                    <img src="<?php App::asset('images/testi/1.jpg'); ?>" alt="">
+
+
                     <h4>- Mr. Jonathon Doe</h4>
                     <p class="desg">Founder of web_bean</p>
                 </div>
@@ -40,7 +42,7 @@
                     <span class="icon-quote"></span>
                     <p>The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.</p>
                     <div class="clearfix"></div>
-                    <img src="assets/img/testi/1.jpg" alt="">
+                    <img src="<?php App::asset('images/testi/1.jpg'); ?>" alt="">
                     <h4>- Mr. Jonathon Doe</h4>
                     <p class="desg">Founder of web_bean</p>
                 </div>

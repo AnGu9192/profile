@@ -61,7 +61,7 @@
 <body>
 <!-- Preloader starts-->
 <div id="preloader"></div>
-<?php if(App::$currentAction != 'login'){ ?>
+<?php if(App::$currentAction != 'login' && App::$currentAction != 'profile' && App::$currentAction != 'register'){ ?>
 <!-- Navigation area starts -->
 <div class="menu-area navbar-fixed-top">
     <div class="container">

@@ -37,7 +37,7 @@
                             <input type="password" name="repeat_password" class="form-control" id="repeat_password" placeholder="Repeat password"   >
                         </div>
                         <div class="form-group in_birth">
-                            <input type="date" name="birthday" class="form-control" id="birthday"   >
+                            <input type="date" name="birthday" class="form-control" id="birthday">
                         </div>
                         <div class="form-group">
                             <label id="gen">Gender</label>
