@@ -19,13 +19,14 @@ class UserController extends Controller
                 'email' => $email,
                 'password' => $password,
                 //'birthday' => $this->request()->post('birthday'),
-                'gender' => $this->request()->post('gender'),
+                //'gender' => $this->request()->post('gender'),
 
             ];
 
             $user = new User();
             $user->insert($data);
-            $this->redirect('user/login');
+            var_dump($user);
+            //$this->redirect('user/login');
 
         }
         $this->render('register');
@@ -55,8 +56,6 @@ class UserController extends Controller
             'id' => $this->session()->get('id'),
 
         ])->first();
-        var_dump($user);
-        //$user = $userModel->select()->all();
         $this->render('profile',[
             'user' => $user
         ]);

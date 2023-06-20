@@ -197,7 +197,6 @@ class Model
     
     }
 
-
     public function count()
     {
         $this->count = count($this->all());

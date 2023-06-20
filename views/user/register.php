@@ -41,14 +41,13 @@
                         </div>
                         <div class="form-group">
                             <label id="gen">Gender</label>
-                            <label class="radio-inline"> <input type="radio"  name="gender">Female</label>
+                            <label class="radio-inline"><input type="radio"  name="gender">Female</label>
                             <label class="radio-inline"><input type="radio" name="gender">Male</label></div>                            </div>
                 <div class="actions">
                     <input type="submit" value="Register" name="register" id="submitButton" class="btn" title="">
 
                 </div>
                 <h5>Or</h5><a href="<?php App::route('user/login'); ?>" class="color:black">Login</a>
-
 
 
                 </form>

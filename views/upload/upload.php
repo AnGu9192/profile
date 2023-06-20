@@ -3,4 +3,3 @@
     <input type="file" name="file" id="file">
     <button name="submit" value="upload">UPLOAD FILE</button>
 </form>
-<?php //echo $textTest;  ?>

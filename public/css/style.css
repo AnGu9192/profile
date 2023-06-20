@@ -1993,3 +1993,7 @@ section {
 .social-ul li a:hover:after {
     background: #fff;
 }
+.work-img{
+    width:500px;
+    height:200px
+}

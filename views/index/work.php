@@ -37,8 +37,8 @@
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix web">
                     <div class="item">
-                        <a href="assets/img/works/1.jpg" class="work-popup">
-                            <img src="assets/img/works/1.jpg" alt="">
+                        <a href="<?php App::asset('images/works/1.jpg'); ?>" class="work-popup">
+                            <img src="<?php App::asset('images/works/1.jpg'); ?>" alt="" >
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>
@@ -50,8 +50,8 @@
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix graphic">
                     <div class="item">
-                        <a href="assets/img/works/2.jpg" class="work-popup">
-                            <img src="assets/img/works/2.jpg" alt="">
+                        <a href="<?php App::asset('images/works/2.jpg'); ?>" class="work-popup">
+                            <img src="<?php App::asset('images/works/2.jpg'); ?>" alt="" class="work-img">
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>
@@ -63,8 +63,8 @@
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix typography web">
                     <div class="item">
-                        <a href="assets/img/works/3.jpg" class="work-popup">
-                            <img src="assets/img/works/3.jpg" alt="">
+                        <a href="<?php App::asset('images/works/3.jpg'); ?>" class="work-popup">
+                            <img src="<?php App::asset('images/works/3.jpg'); ?>" alt="">
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>
@@ -76,8 +76,8 @@
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix app web">
                     <div class="item">
-                        <a href="assets/img/works/4.jpg" class="work-popup">
-                            <img src="assets/img/works/4.jpg" alt="">
+                        <a href="<?php App::asset('images/works/4.jpg'); ?>" class="work-popup">
+                            <img src="<?php App::asset('images/works/4.jpg'); ?>" alt="">
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>
@@ -89,8 +89,8 @@
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix app graphic">
                     <div class="item">
-                        <a href="assets/img/works/5.jpg" class="work-popup">
-                            <img src="assets/img/works/5.jpg" alt="">
+                        <a href="<?php App::asset('images/works/5.jpg'); ?>" class="work-popup">
+                            <img src="<?php App::asset('images/works/5.jpg'); ?>" alt="">
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>
@@ -102,8 +102,8 @@
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix app graphic">
                     <div class="item">
-                        <a href="assets/img/works/6.jpg" class="work-popup">
-                            <img src="assets/img/works/6.jpg" alt="">
+                        <a href="a<?php App::asset('images/works/6.jpg'); ?>" class="work-popup">
+                            <img src="a<?php App::asset('images/works/6.jpg'); ?>" alt="">
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>

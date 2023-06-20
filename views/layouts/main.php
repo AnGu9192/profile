@@ -61,7 +61,9 @@
 <body>
 <!-- Preloader starts-->
 <div id="preloader"></div>
-<?php if(App::$currentAction != 'login' && App::$currentAction != 'profile' && App::$currentAction != 'register'){ ?>
+<?php //if(App::$currentAction != 'login' && App::$currentAction != 'profile' && App::$currentAction != 'register' &&
+//         App::$currentAction != 'upload'){ ?>
+<?php if(App::$currentController != 'user'  && App::$currentController != 'upload') { ?>
 <!-- Navigation area starts -->
 <div class="menu-area navbar-fixed-top">
     <div class="container">
