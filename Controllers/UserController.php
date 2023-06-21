@@ -42,10 +42,12 @@ class UserController extends Controller
         if($this->request()->post('login')) {
             $email = $this->request()->post('email');
             $password = $this->request()->post('password');
+
             $userModel = new User();
             $user = $userModel->select()->where([
                 'email' => $email,
             ])->first();
+
 
             if ($user) {
                 if (password_verify($password, $user->password)) {
@@ -104,6 +106,8 @@ class UserController extends Controller
             $email = $this->request()->post('email');
             $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
+
+
             $data = [
                 'firstname' => $firstname,
                 'lastname' => $lastname,
@@ -135,8 +139,6 @@ class UserController extends Controller
     }
     public function deleteAction(){
 
-        //$db->delete('users')->where(['id'=>6]);
-
         $userId = $this->session()->get('user_id');
 
         $userModel = new User();
@@ -144,12 +146,11 @@ class UserController extends Controller
             'id'=> $userId,
         ]);
 
-        $this->redirect('user/LOGIN');
+        $this->redirect('user/login');
 
     }
     public function logoutAction(){
-
-
+        $this->session()->destroy();
         $this->redirect('user/login');
 
     }

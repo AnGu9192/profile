@@ -20,6 +20,14 @@ echo $user->avatar;
 //        } else {
 //            $src = STORAGE . $user->avatar;
 //        } ?>
+        <?php
+//            $src = STORAGE  . $user->gender . '.jpg';
+//            echo $src;
+
+        ?>
+<!--        <img src="--><?php //App::asset("storage/$user->avatar"); ?><!-- >-->
+
+
 
 
 

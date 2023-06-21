@@ -1,4 +1,8 @@
 
+const passwordInput = document.querySelector("#password");
+const repeatpasswordInput = document.querySelector("#repeat_password");
+
+
 
 function getImagePreview(event)
 {

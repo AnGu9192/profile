@@ -59,10 +59,14 @@
 </head>
 
 <body>
+
 <!-- Preloader starts-->
 <div id="preloader"></div>
-<?php $userId = $this->request()->get('id');
+
+<?php
+    $userId = $this->session()->get('user_id');
 ?>
+
 <?php
 $hideNav = [
     'login',
