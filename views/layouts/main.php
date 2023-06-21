@@ -106,7 +106,6 @@ $hideNav = [
                                     <li><a class="btnLogin-popup" href="<?php App::route('user/profile'); ?>">Profile</a></li>
                                     <?php } ?>
 
-
                                 </ul>
                             </nav>
                         </div>
@@ -187,6 +186,9 @@ $hideNav = [
 
 <!-- Main js-->
 <script src="<?php App::asset("js/main_script.js"); ?>"></script>
+
+<script src="<?php App::asset("js/script.js"); ?>"></script>
+
 </body>
 
 </html>

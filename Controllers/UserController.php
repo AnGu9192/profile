@@ -133,7 +133,22 @@ class UserController extends Controller
 
 
     }
+    public function deleteAction(){
+
+        //$db->delete('users')->where(['id'=>6]);
+
+        $userId = $this->session()->get('user_id');
+
+        $userModel = new User();
+        $user = $userModel->delete($userModel)->where([
+            'id'=> $userId,
+        ]);
+
+        $this->redirect('user/LOGIN');
+
+    }
     public function logoutAction(){
+
 
         $this->redirect('user/login');
 

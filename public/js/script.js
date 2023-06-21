@@ -1,5 +1,3 @@
-const passwordInput = document.querySelector("#password");
-const repeatpasswordInput = document.querySelector("#repeat_password");
 
 
 function getImagePreview(event)
@@ -10,9 +8,12 @@ function getImagePreview(event)
   var newimg=document.createElement('img');
   imagediv.innerHTML='';
   newimg.src=image;
-  newimg.width="100";
+  newimg.width="200";
   imagediv.appendChild(newimg);
 };
+
+
+
 function getImage(event)
 {
   document.getElementById("uploadImageProect").style.display = "block";
@@ -106,6 +107,9 @@ $(document).on('keyup','#search',function(){
 
 });
 
+  function checkDelete(){
+    return confirm('Are you sure?');
+  }
 
 });
 

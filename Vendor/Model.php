@@ -110,6 +110,7 @@ class Model
 
     public function delete()
     {
+
         $this->sql = "DELETE FROM $this->table";
         return $this;
     }
