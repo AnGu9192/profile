@@ -85,7 +85,6 @@ class UserController extends Controller
                 $this->redirect('user/profile');
             }
 
-
         }
 
         $this->redirect('user/profile');
@@ -111,20 +110,34 @@ class UserController extends Controller
                 'email' => $email,
                 'birthday' => $birthday,
                 'gender' => $gender,
-
             ];
+
+            $userId = $this->session()->get('user_id');
+
             if($userModel->update($data)->where([
                 'id'=> $userId
             ])){
                 $this->redirect('user/profile');
             }
+            var_dump($userModel);
+
         }
+
+
         $user = $userModel->select()->where([
             'id' => $userId,
         ])->first();
         $this->render('edit',[
             'user' => $user
         ]);
+
+
     }
+    public function logoutAction(){
+
+        $this->redirect('user/login');
+
+    }
+
 
 }

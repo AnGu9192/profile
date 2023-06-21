@@ -27,19 +27,14 @@
                         </div>
 
                         <div class="form-group in_name">
-                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Lastname"   >
+                            <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Lastname" value="<?php echo $user->lastname ?>"   >
                         </div>
                         <div class="form-group in_email">
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Email"   >
+                            <input type="email" name="email" class="form-control" id="email" placeholder="Email"  value="<?php echo $user->email ?>"  >
                         </div>
-                        <div class="form-group in_psw">
-                            <input type="password" name="password" class="form-control" id="password" placeholder="Password"   >
-                        </div>
-                        <div class="form-group in_psw">
-                            <input type="password" name="repeat_password" class="form-control" id="repeat_password" placeholder="Repeat password"   >
-                        </div>
+
                         <div class="form-group in_birth">
-                            <input type="date" name="birthday" class="form-control" id="birthday">
+                            <input type="date" name="birthday" class="form-control" id="birthday" value="<?php echo $user->birthday ?>">
                         </div>
                         <div class="form-group">
                             <label id="gen">Gender</label>

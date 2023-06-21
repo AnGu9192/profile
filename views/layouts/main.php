@@ -61,6 +61,8 @@
 <body>
 <!-- Preloader starts-->
 <div id="preloader"></div>
+<?php $userId = $this->request()->get('id');
+?>
 <?php
 $hideNav = [
     'login',
@@ -97,16 +99,25 @@ $hideNav = [
                                     <li><a class="smooth_scroll" href="#work">Work</a></li>
                                     <li><a class="smooth_scroll" href="#testimonial">Testimonial</a></li>
                                     <li><a class="smooth_scroll" href="#contact">Contact</a></li>
-                                    <li><a href="<?php App::route('user/login'); ?>">Login</a></li>
+
+                                    <?php if (!$userId) { ?>
+                                        <li><a class="btnLogin-popup" href="<?php App::route('user/login'); ?>">Login</a></li>
+                                    <?php }   else  { ?>
+                                    <li><a class="btnLogin-popup" href="<?php App::route('user/profile'); ?>">Profile</a></li>
+                                    <?php } ?>
+
+
                                 </ul>
                             </nav>
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- Navigation ends -->
 
         </div>
+
     </div>
 </div>
 <!-- Navigation area ends -->
