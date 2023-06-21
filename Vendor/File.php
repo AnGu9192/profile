@@ -7,7 +7,7 @@ class File
         $data = $_FILES[$file];
         $dataSize = $data["size"];
         $src = $data["tmp_name"];
-        $uploadDir = STORAGE . $file . $data["name"];
+        $uploadDir = STORAGE . $data["name"];
         $imageFileType = strtolower(pathinfo($uploadDir, PATHINFO_EXTENSION));
         $allowedExtensions = ["jpg", "png", "jpeg", "gif", "svg", "webp"];
 
@@ -27,9 +27,8 @@ class File
 
 
         if (move_uploaded_file($src, $uploadDir)) {
-
             echo 'File uploaded';
-            return true;
+            return $data["name"];
         }
 
 

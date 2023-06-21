@@ -41,25 +41,27 @@ class App {
         $controllerName = ucfirst($controller) . 'Controller';
         $controllerFileName = $controllerName . '.php';
         $actionName = $action . 'Action';
+        if(!file_exists(STORAGE . $action)){
 
-        if(file_exists(CONTROLLERS . $controllerFileName)){
-            require_once VENDOR . "Model.php";
-            self::loadModels();
-            require_once VENDOR . "Controller.php";
-            require_once CONTROLLERS . $controllerFileName;
-            if(class_exists($controllerName)){
-                $conrollerObj = new $controllerName;
-                if(method_exists($conrollerObj, $actionName)){
-                    $conrollerObj->$actionName();
+            if(file_exists(CONTROLLERS . $controllerFileName)){
+                require_once VENDOR . "Model.php";
+                self::loadModels();
+                require_once VENDOR . "Controller.php";
+                require_once CONTROLLERS . $controllerFileName;
+                if(class_exists($controllerName)){
+                    $conrollerObj = new $controllerName;
+                    if(method_exists($conrollerObj, $actionName)){
+                        $conrollerObj->$actionName();
+                    }else{
+                        throw new Exception("public function $actionName(){} method is not declared in $controllerName class");
+                    }
+
                 }else{
-                    throw new Exception("public function $actionName(){} method is not declared in $controllerName class");
+                    throw new Exception("$controllerName class is not declared");
                 }
-
             }else{
-                throw new Exception("$controllerName class is not declared");
+                throw new Exception("$controllerFileName Controller class does not exists in " . CONTROLLERS . ' directory');
             }
-        }else{
-            throw new Exception("$controllerFileName Controller class does not exists in " . CONTROLLERS . ' directory');
         }
 
     }

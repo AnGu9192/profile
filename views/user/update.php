@@ -3,7 +3,7 @@
 
 <div class="container">
     <div class="contactForm">
-        <form action="" method="post" autocomplate="off">
+        <form action="<?php App::asset('update'); ?>" method="post" autocomplate="off">
             <div class='registration_page'>
                 <h2 class="signup">Update Page</h2>
             </div>

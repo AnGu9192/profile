@@ -7,6 +7,7 @@ class Model
     public $sql = null;
     private $connection;
     public $table;
+    public $isSelect = false;
     public function __construct()
     {
         if(!$this->table){
@@ -43,7 +44,7 @@ class Model
         $result = $this->query();
 
 
-        while ($row = $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
         $data[] = (object)$row;
     }
 
@@ -53,6 +54,7 @@ class Model
 
     public function select($what = '*')
     {
+        $this->isSelect = true;
 
         $this->sql = "SELECT $what FROM `$this->table`";
 
@@ -65,13 +67,15 @@ class Model
     {
         $whereArr = [];
         foreach ($conditions as $field => $value) {
-        $whereArr[] = $field . "='" . $value . "'";
-    }
+            $whereArr[] = $field . "='" . $value . "'";
+        }
 
         $whereStr = implode(' AND ', $whereArr);
         $this->sql .= " WHERE $whereStr";
         $this->query();
-        $this->count = $this->count();
+        if($this->isSelect){
+            $this->count = $this->count();
+        }
         return $this;
     }
 
@@ -80,21 +84,22 @@ class Model
         $fieldsArr = [];
         $valuesArr = [];
         foreach ($data as $fields => $value) {
-        $fieldsArr[] = "`" . $fields . "`";
-        $valuesArr[] = "'" . $value . "'";
+            $fieldsArr[] = "`" . $fields . "`";
+            $valuesArr[] = "'" . $value . "'";
         }
         $fields = implode(',', $fieldsArr);
         $values = implode(',', $valuesArr);
         $this->sql = "INSERT INTO $this->table ($fields) VALUES ($values)";
+
         return $this->query();
     }
 
-    public function update($conditions)
+    public function update($data)
     {
         $valuesArr = [];
-        foreach ($conditions as $fields => $value) {
-        $valuesArr[] = $fields . "='" . $value . "'";
-    }
+        foreach ($data as $fields => $value) {
+            $valuesArr[] = $fields . "='" . $value . "'";
+        }
         $values = implode(',', $valuesArr);
 
         $this->sql = "UPDATE $this->table SET  $values";
@@ -214,6 +219,10 @@ class Model
     }
     public function session() : object {
         return App::session();
+    }
+
+    public function lastQuery(){
+        return $this->sql;
     }
 
 }

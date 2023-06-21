@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+
+?>
 
 <!-- Register area starts -->
 <section class="contact-area section-big">
@@ -19,9 +21,9 @@
                 <!-- Contact form starts -->
                 <div class="contact-form">
 
-                    <form id="" action="<?php App::route('user/register'); ?>" method="post">
+                    <form id="" action="<?php App::route('user/edit'); ?>" method="post">
                         <div class="form-group in_name">
-                            <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Firstname"   >
+                            <input type="text" name="firstname" class="form-control" id="firstname" value="<?php echo $user->firstname ?>" placeholder="Firstname"   >
                         </div>
 
                         <div class="form-group in_name">
@@ -44,10 +46,9 @@
                             <label class="radio-inline"><input type="radio"  name="gender" value="female">Female</label>
                             <label class="radio-inline"><input type="radio" name="gender" value="male" '>Male</label></div>                            </div>
                 <div class="actions">
-                    <input type="submit" value="Register" name="register" id="submitButton" class="btn" title="">
+                    <input type="submit" value="Edit" name="edit" id="submitButton" class="btn" title="">
 
                 </div>
-                <h5>Or</h5><a href="<?php App::route('user/login'); ?>" class="color:black">Login</a>
 
 
                 </form>

@@ -19,7 +19,7 @@
                     <!-- Contact form starts -->
                     <div class="contact-form">
 
-                        <form id="" action="" method="post">
+                        <form id="" action="<?php App::route('user/login'); ?>" method="post">
                             <div class="form-group in_email">
                                 <input type="email" name="email" class="form-control" id="email" placeholder="Email" required="required">
                             </div>
@@ -28,7 +28,7 @@
                             </div>
 
                             <div class="actions">
-                                <input type="submit" value="Login" name="submit" id="submitButton" class="btn" title="">
+                                <input type="submit" value="Login" name="login" id="submitButton" class="btn" title="">
                             </div>
                         </form>
 
