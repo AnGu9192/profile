@@ -1,0 +1,9 @@
+
+navigation when login profile
+delete profile
+edit profile
+avatar default image male/female
+
+password == repeat_password validation ???
+avatar img when register user ???
+

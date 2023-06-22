@@ -1,37 +1,19 @@
 
-<?php
-//
-//echo $user->firstname;
-//echo $user->lastname;
-echo $user->avatar;
-
-?>
-
 <div class="d-flex justify-content-center align-items-center vh-100">
 
     <div class="shadow w-350 p-3 text-center">
         <h1 text-center>Welcome </h1>
 
-<!--        --><?php //if (!$user->avatar) {
-//            $src = STORAGE  . $user->gender . '.jpg';
-//
-//            $user->gender['male'] == "male" ? '<img src="../storage/male.jpg" />' : '<img src="../storage/female.jpg" />';
-//
-//        } else {
-//            $src = STORAGE . $user->avatar;
-//        } ?>
-        <?php
-//            $src = STORAGE  . $user->gender . '.jpg';
-//            echo $src;
-
-        ?>
-<!--        <img src="--><?php //App::asset("storage/$user->avatar"); ?><!-- >-->
-
-
-
-
-
         <label>
+            <?php if (!$user->avatar) {
+                $src = App::asset('images/') . $user->gender . '.jpg';
+                echo $src;
+
+            } else {
+                $src = STORAGE . $user->avatar;
+            } ?>
+<!--            <img src = "--><?php //echo App::asset('images/') . $user->gender . '.jpg';?><!--" />-->
+
             <form action="<?php App::route('user/upload'); ?>" method="post"
                   enctype="multipart/form-data">
                 <input class="hide" type="file" name="avatar" id="avatar" onchange="getImagePreview(event)">

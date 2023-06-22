@@ -13,9 +13,17 @@ class UserController extends Controller
             $gender = $this->request()->post('gender');
             $password = $this->request()->post('password');
             $password = password_hash($password,PASSWORD_DEFAULT);
+            $rpassword = $this->request()->post('repeat_password');
 
             $email = $this->request()->post('email');
             $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+            if ($password === $rpassword) {
+                echo "<script> alert(' Entered passwords are same') </script>";
+            }
+            else {
+                echo "<script> alert(' Please enter same passwords ') </script>";
+            }
 
             $data = [
                 'firstname' => $firstname,
@@ -150,6 +158,7 @@ class UserController extends Controller
 
     }
     public function logoutAction(){
+
         $this->session()->destroy();
         $this->redirect('user/login');
 
