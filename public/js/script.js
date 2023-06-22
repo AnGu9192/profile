@@ -1,6 +1,7 @@
 
-const passwordInput = document.querySelector("#password");
-const repeatpasswordInput = document.querySelector("#repeat_password");
+// const passwordInput = document.querySelector("#password");
+// const repeatpasswordInput = document.querySelector("#repeat_password");
+
 
 
 
@@ -111,9 +112,8 @@ $(document).on('keyup','#search',function(){
 
 });
 
-  function checkDelete(){
-    return confirm('Are you sure?');
-  }
+
+
 
 });
 

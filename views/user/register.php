@@ -1,4 +1,3 @@
-<?php ?>
 
 <!-- Register area starts -->
 <section class="contact-area section-big">
@@ -19,7 +18,7 @@
                 <!-- Contact form starts -->
                 <div class="contact-form">
 
-                    <form id="" action="<?php App::route('user/register'); ?>" method="post">
+                    <form id="" action="<?php App::route('user/register'); ?>" method="post"  onSubmit="return checkPassword(this)">
                         <div class="form-group in_name">
                             <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Firstname"   >
                         </div>
@@ -44,7 +43,7 @@
                             <label class="radio-inline"><input type="radio"  name="gender" value="female">Female</label>
                             <label class="radio-inline"><input type="radio" name="gender" value="male" '>Male</label></div>                            </div>
                 <div class="actions">
-                    <input type="submit" value="Register" name="register" id="submitButton" class="btn" title="">
+                    <input type="submit" value="Register" name="register" id="submitButton" class="btn" title="" onclick="return Validate()">
 
                 </div>
                 <h5>Or</h5><a href="<?php App::route('user/login'); ?>" class="color:black">Login</a>
@@ -63,4 +62,21 @@
 
     </div>
 </section>
+
+
+<script>
+
+function checkPassword(form) {
+  const password = form.password.value;
+  const confirmPassword = form.repeat_password.value;
+
+  if (password != confirmPassword) {
+    alert("Error! Password did not match.");
+    return false;
+  } else {
+    return true;
+  }
+}
+</script>
+
 <!-- Register area ends -->

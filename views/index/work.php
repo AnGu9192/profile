@@ -1,3 +1,6 @@
+<?php 
+?>
+
 <!-- Work area starts -->
 <section id="work" class="works section-big">
     <div class="container">

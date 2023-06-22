@@ -1,6 +1,5 @@
 
-<div class="d-flex justify-content-center align-items-center vh-100">
-
+<div class="d-flex justify-content-center align-items-center vh-100"  style="margin-top:60px">
     <div class="shadow w-350 p-3 text-center">
         <h1 text-center>Welcome </h1>
 
@@ -40,12 +39,12 @@
     </div>
 </div>
 
+<script language="JavaScript" type="text/javascript">
+function checkDelete(){
+    return confirm('Are you sure?');
+}
+</script>
 
-<!--                <img src="--><?php //App::asset("storage/$user->avatar"); ?><!--">-->
-<!--        <form action="--><?php //App::route('user/upload'); ?><!--" method="post" enctype="multipart/form-data" style="display: none">-->
-<!--                <input type="file" name="avatar" id="avatar">-->
-<!--                <button name="avatar" value="upload">UPLOAD FILE</button>-->
-<!--        </form>-->
 
 
 
