@@ -63,7 +63,6 @@
     </div>
 </section>
 
-
 <script>
 
 function checkPassword(form) {
@@ -77,6 +76,6 @@ function checkPassword(form) {
     return true;
   }
 }
-</script>
+</script> 
 
 <!-- Register area ends -->

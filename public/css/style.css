@@ -2006,13 +2006,11 @@ section {
 /*input[type="file"]{*/
 /*    display: none;*/
 /*}*/
-/*#preview img{*/
-/*    border-radius: 50%;*/
-/*    border:8px solid #DCDCDC;*/
-/*    width: 125px;*/
-/*    height: 125px;*/
-/*    margin:0 25%;*/
-/*}*/
+#preview img{
+    border-radius: 20%;
+    border:8px solid #DCDCDC;
+
+}
 /*.upload_submit input[type=submit]{*/
 /*    border: none;*/
 /*    outline: none;*/

@@ -6,14 +6,5 @@ class IndexController extends Controller {
         $this->render('index');
     }
 
-    public function workAction(){
-
-        $projectModel = new Project();
-        $projectId = $this->request()->get('id');
-
-        $project = $projectModel->select()->all();
-
-        $this->render('work');
-    }
 
 }

@@ -44,6 +44,7 @@ $(document).ready(function(){
 
   const form = document.getElementById("signup");
 
+
   if(form){
     form.addEventListener("submit", (e) => {
       // e.preventDefault();
@@ -116,5 +117,7 @@ $(document).on('keyup','#search',function(){
 
 
 });
+
+
 
 

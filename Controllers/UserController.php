@@ -14,16 +14,11 @@ class UserController extends Controller
             $password = $this->request()->post('password');
             $password = password_hash($password,PASSWORD_DEFAULT);
             
-            $rpassword = $this->request()->post('repeat_password');
+//            $rpassword = $this->request()->post('repeat_password');
 
             $email = $this->request()->post('email');
             $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
-               // if ($password !== $rpassword) {
-
-            //     $this->redirect('user/register');
-
-            // }
 
 
             $data = [
@@ -81,7 +76,6 @@ class UserController extends Controller
     public function profileAction(){
         if(!$this->session()->get('user_id')){
             $this->redirect('user/login');
-
         }
         $userModel = new User();
         $user = $userModel->select()->where([

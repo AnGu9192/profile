@@ -5,13 +5,16 @@
 
         <label>
             <?php if (!$user->avatar) {
+
                 $src = App::asset('images/') . $user->gender . '.jpg';
+                // $src = STORAGE . $user->gender . '.jpg';
                 echo $src;
 
             } else {
                 $src = STORAGE . $user->avatar;
             } ?>
-<!--            <img src = "--><?php //echo App::asset('images/') . $user->gender . '.jpg';?><!--" />-->
+
+         <!-- <img width="200" src="<?php  echo $src ?>">  -->
 
             <form action="<?php App::route('user/upload'); ?>" method="post"
                   enctype="multipart/form-data">
@@ -27,6 +30,7 @@
         </label>
 
         <h3 class="display-4 "><?= $user->firstname; ?>&nbsp;&nbsp;<?= $user->lastname; ?></h3>
+        <p><?= $user->email; ?></p>
         <a href="<?php App::route("user/edit/$user->id"); ?>" class="btn btn-primary">
             Edit Profile
         </a>
