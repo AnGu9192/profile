@@ -3,7 +3,12 @@ class IndexController extends Controller {
 
     public function indexAction(){
 
-        $this->render('index');
+        $project = new Project();
+        $projects = $project->select()->all();
+
+        $this->render('index',[
+            "projects" => $projects
+        ]);
     }
 
 

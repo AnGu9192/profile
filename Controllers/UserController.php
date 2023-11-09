@@ -12,32 +12,34 @@ class UserController extends Controller
             $birthday = $this->request()->post('birthday');
             $gender = $this->request()->post('gender');
             $password = $this->request()->post('password');
-            $password = password_hash($password,PASSWORD_DEFAULT);
-            
-//            $rpassword = $this->request()->post('repeat_password');
+
+           $rpassword = $this->request()->post('repeat_password');
 
             $email = $this->request()->post('email');
             $email = filter_var($email, FILTER_VALIDATE_EMAIL);
-
-
-
-            $data = [
-                'firstname' => $firstname,
-                'lastname' => $lastname,
-                'email' => $email,
-                'password' => $password,
-                'birthday' => $birthday,
-                'gender' => $gender,
-
-            ];
-
             $user = new User();
+            if($password == $rpassword){
+                $password = password_hash($password,PASSWORD_DEFAULT);
+                $data = [
+                    'firstname' => $firstname,
+                    'lastname' => $lastname,
+                    'email' => $email,
+                    'password' => $password,
+                    'birthday' => $birthday,
+                    'gender' => $gender,
+                ];
 
-            if($user->insert($data)){
 
-                $this->redirect('user/login');
+                if($user->insert($data)){
 
+                    $this->redirect('user/login');
+
+                }
+            }else{
+                $this->session()->set('error',"Passwords don't much");
+                $this->redirect('user/register');
             }
+
 
             
          

@@ -1,5 +1,7 @@
 
+
 <!-- Register area starts -->
+
 <section class="contact-area section-big">
     <div class="container">
 
@@ -8,6 +10,7 @@
                 <div class="section-title">
                     <h2>Register</h2>
                 </div>
+                <p class="error"><?php echo $this->session()->get('error'); ?></p>
             </div>
         </div>
 
@@ -63,19 +66,19 @@
     </div>
 </section>
 
-<script>
-
-function checkPassword(form) {
-  const password = form.password.value;
-  const confirmPassword = form.repeat_password.value;
-
-  if (password != confirmPassword) {
-    alert("Error! Password did not match.");
-    return false;
-  } else {
-    return true;
-  }
-}
-</script> 
+<!--<script>-->
+<!---->
+<!--function checkPassword(form) {-->
+<!--  const password = form.password.value;-->
+<!--  const confirmPassword = form.repeat_password.value;-->
+<!---->
+<!--  if (password != confirmPassword) {-->
+<!--    alert("Error! Password did not match.");-->
+<!--    return false;-->
+<!--  } else {-->
+<!--    return true;-->
+<!--  }-->
+<!--}-->
+<!--</script> -->
 
 <!-- Register area ends -->

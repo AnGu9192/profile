@@ -4,5 +4,4 @@ delete profile
 edit profile
 avatar default image male/female
 
-password == repeat_password validation ???
 projects images from baza

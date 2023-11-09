@@ -1,4 +1,3 @@
-
 <!-- Work area starts -->
 <section id="work" class="works section-big">
     <div class="container">
@@ -35,85 +34,23 @@
         <div class="portfolio">
             <div class="row work-items">
 
+                <?php foreach($projects as $project ){ ?>
                 <!-- work item -->
                 <div class="col-md-4 col-sm-6 mix web">
                     <div class="item">
-                        <a href="<?php App::asset('images/works/1.jpg'); ?>" class="work-popup">
-                            <img src="<?php App::asset('images/works/1.jpg'); ?>" alt="" >
+                        <a href="<?php App::asset("storage/$project->image"); ?>" class="work-popup">
+                            <img src="<?php App::asset("storage/$project->image"); ?>" alt="" >
                             <div class="overlay">
                                 <span class="icon-focus"></span>
                             </div>
-                            <div class="title">This is project Title</div>
+                            <div class="title"><?php echo $project->title ?></div>
                         </a>
                     </div>
                 </div>
-
-                <!-- work item -->
-                <div class="col-md-4 col-sm-6 mix graphic">
-                    <div class="item">
-                        <a href="<?php App::asset('images/works/2.jpg'); ?>" class="work-popup">
-                            <img src="<?php App::asset('images/works/2.jpg'); ?>" alt="" class="work-img">
-                            <div class="overlay">
-                                <span class="icon-focus"></span>
-                            </div>
-                            <div class="title">This is project Title</div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- work item -->
-                <div class="col-md-4 col-sm-6 mix typography web">
-                    <div class="item">
-                        <a href="<?php App::asset('images/works/3.jpg'); ?>" class="work-popup">
-                            <img src="<?php App::asset('images/works/3.jpg'); ?>" alt="">
-                            <div class="overlay">
-                                <span class="icon-focus"></span>
-                            </div>
-                            <div class="title">This is project Title</div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- work item -->
-                <div class="col-md-4 col-sm-6 mix app web">
-                    <div class="item">
-                        <a href="<?php App::asset('images/works/4.jpg'); ?>" class="work-popup">
-                            <img src="<?php App::asset('images/works/4.jpg'); ?>" alt="">
-                            <div class="overlay">
-                                <span class="icon-focus"></span>
-                            </div>
-                            <div class="title">This is project Title</div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- work item -->
-                <div class="col-md-4 col-sm-6 mix app graphic">
-                    <div class="item">
-                        <a href="<?php App::asset('images/works/5.jpg'); ?>" class="work-popup">
-                            <img src="<?php App::asset('images/works/5.jpg'); ?>" alt="">
-                            <div class="overlay">
-                                <span class="icon-focus"></span>
-                            </div>
-                            <div class="title">This is project Title</div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- work item -->
-                <div class="col-md-4 col-sm-6 mix app graphic">
-                    <div class="item">
-                        <a href="a<?php App::asset('images/works/6.jpg'); ?>" class="work-popup">
-                            <img src="a<?php App::asset('images/works/6.jpg'); ?>" alt="">
-                            <div class="overlay">
-                                <span class="icon-focus"></span>
-                            </div>
-                            <div class="title">This is project Title</div>
-                        </a>
-                    </div>
-                </div>
+            <?php }  ?>
 
             </div>
+
         </div>
 
     </div>

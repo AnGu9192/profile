@@ -6,21 +6,18 @@
         <label>
             <?php if (!$user->avatar) {
 
-                $src = App::asset('images/') . $user->gender . '.jpg';
-                // $src = STORAGE . $user->gender . '.jpg';
-                echo $src;
+                $src = "images/$user->gender.jpg";
 
             } else {
-                $src = STORAGE . $user->avatar;
+                $src = 'storage/' . $user->avatar;
             } ?>
 
-         <!-- <img width="200" src="<?php  echo $src ?>">  -->
 
             <form action="<?php App::route('user/upload'); ?>" method="post"
                   enctype="multipart/form-data">
                 <input class="hide" type="file" name="avatar" id="avatar" onchange="getImagePreview(event)">
                 <div id="preview">
-                    <img width="200" src="<?php App::asset("storage/$user->avatar"); ?>" alt="">
+                    <img width="200" src="<?php App::asset($src); ?>" alt="">
                 </div>
 
                 <div class="upload_submit" style="display: none;" id="uploadSub">

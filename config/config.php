@@ -1,3 +1,3 @@
 <?php
-const DEFAULT_CONTROLLER = 'index';
-const DEFAULT_ACTION = 'index';
+const DEFAULT_CONTROLLER = 'user';
+const DEFAULT_ACTION = 'login';
